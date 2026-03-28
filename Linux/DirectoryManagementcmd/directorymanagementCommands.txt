@@ -1,0 +1,4 @@
+mkdir folder            # create directory
+rmdir folder            # remove empty directory
+rm -r folder            # delete directory with files
+cp -r folder1 folder2   # copy directory
