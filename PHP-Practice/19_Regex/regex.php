@@ -1,0 +1,1 @@
+<?php if(preg_match('/[0-9]/','Hello123')){ echo 'Contains Number'; } ?>
