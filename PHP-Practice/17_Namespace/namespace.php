@@ -1,1 +1,0 @@
-<?php namespace MyApp; class Test{ function hello(){ echo 'Hello'; } } $obj=new Test(); $obj->hello(); ?>

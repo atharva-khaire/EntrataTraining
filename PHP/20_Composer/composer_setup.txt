@@ -1,0 +1,85 @@
+<?php require 'vendor/autoload.php'; echo 'Composer Working'; ?>🔹 Install Composer
+
+ Official website:
+ https://getcomposer.org/
+
+ Check installation:
+
+composer -V
+ 1. composer.json (Main File)
+
+ Ye file batati hai kaunse packages chahiye
+
+{
+    "require": {
+        "monolog/monolog": "^2.0"
+    }
+}
+ 2. Install Dependencies
+composer install
+
+✔ Ye vendor/ folder create karega
+
+ 3. Autoload use karna
+<?php
+require 'vendor/autoload.php';
+
+echo "Composer Loaded!";
+?>
+ 4. Package Install Example
+composer require monolog/monolog
+ 5. Example with Library
+<?php
+require 'vendor/autoload.php';
+
+use Monolog\Logger;
+use Monolog\Handler\StreamHandler;
+
+$log = new Logger('app');
+$log->pushHandler(new StreamHandler('app.log', Logger::WARNING));
+
+$log->warning('This is a warning log!');
+?>
+ 6. Autoload (PSR-4) 
+
+ Apne classes automatically load karne ke liye
+
+composer.json
+{
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
+
+ Run:
+
+composer dump-autoload
+src/User.php
+<?php
+namespace App;
+
+class User {
+    public function name(){
+        return "Atharva";
+    }
+}
+index.php
+<?php
+require 'vendor/autoload.php';
+
+use App\User;
+
+$user = new User();
+echo $user->name();
+?>
+ Folder Structure
+project/
+│
+├── composer.json
+├── composer.lock
+├── vendor/
+├── src/
+│   └── User.php
+└── index.php
