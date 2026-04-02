@@ -1,0 +1,46 @@
+version: "3.9"
+
+services:
+
+  mysql:
+    image: mysql:8
+    container_name: mysql-DB
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: Docker
+
+    ports:
+      - "3307:3306"
+
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+    restart: always
+
+  backend:
+    image: vedantgulhane/practiceapp-backend:01
+    container_name: backend-app
+
+    ports:
+      - "5000:5000"
+
+    depends_on:
+      - mysql
+
+    restart: always
+
+  frontend:
+    image: vedantgulhane/practiceapp-frontend:01
+    container_name: frontend-app
+
+    ports:
+      - "5173:5173"
+
+    depends_on:
+      - backend
+
+    restart: always
+
+volumes:
+  mysql-data:

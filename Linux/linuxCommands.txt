@@ -1,0 +1,56 @@
+Basic Linux Commands (Dev Needed Only)
+
+1. Introduction to Linux
+Linux is an open-source operating system used in servers, cloud, DevOps, Android, etc.
+
+2. Why learn Linux
+- Used in servers
+- Required for DevOps & backend
+- Faster than GUI
+- Automation support
+- Cloud & Docker usage
+
+3. Basic command structure
+command [options] [arguments]
+Example:
+ls -l /home
+
+4. Navigating file system
+pwd -> current directory
+ls -> list files
+ls -l -> detailed list
+ls -a -> hidden files
+cd folder_name -> move into folder
+cd .. -> back
+cd / -> root
+cd ~ -> home
+
+5. Viewing files
+cat file.txt -> show file content
+less file.txt -> page view
+head file.txt -> first lines
+tail file.txt -> last lines
+
+6. Editing files
+nano file.txt -> simple editor
+vim file.txt -> advanced editor
+
+7. File manipulation
+touch file.txt -> create file
+cp file1 file2 -> copy file
+mv old new -> rename/move
+rm file.txt -> delete file
+
+8. Directory management
+mkdir folder -> create folder
+rmdir folder -> remove empty folder
+rm -r folder -> remove folder with content
+cp -r f1 f2 -> copy directory
+
+9. Process management
+ps -> show processes
+ps aux -> detailed processes
+top -> live processes
+kill PID -> stop process
+kill -9 PID -> force stop
+pgrep node -> find process by name

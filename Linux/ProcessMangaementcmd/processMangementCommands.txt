@@ -1,0 +1,9 @@
+ps                  # show running processes
+ps aux              # detailed process list
+top                 # live process monitor
+
+kill PID            # stop process
+kill -9 PID         # force stop
+
+pgrep node          # find process by name
+

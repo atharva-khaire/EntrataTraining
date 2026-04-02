@@ -1,0 +1,4 @@
+cat file.txt        # show content
+less file.txt       # scroll view
+head file.txt       # first lines
+tail file.txt       # last lines

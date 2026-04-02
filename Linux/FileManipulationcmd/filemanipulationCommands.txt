@@ -1,0 +1,4 @@
+touch file.txt          # create file
+cp file1.txt file2.txt  # copy file
+mv old.txt new.txt      # move/rename file
+rm file.txt             # delete file

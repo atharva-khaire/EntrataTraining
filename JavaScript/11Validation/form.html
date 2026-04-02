@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <body>
+    <h2>Form Validation Example</h2>
+
+    <form onsubmit="return validateForm();">
+      Name: <input type="text" id="name" /><br /><br />
+      Email: <input type="text" id="email" /><br /><br />
+      Age: <input type="number" id="age" /><br /><br />
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <p id="msg"></p>
+
+    <script>
+      function validateForm() {
+        let name = document.getElementById("name").value;
+        let email = document.getElementById("email").value;
+        let age = document.getElementById("age").value;
+
+        let message = document.getElementById("msg");
+
+        // ===== 1. Empty Check =====
+        if (name === "" || email === "" || age === "") {
+          message.innerHTML = " All fields are required!";
+          message.style.color = "red";
+          return false;
+        }
+
+        // ===== 2. Name Validation =====
+        if (name.length < 3) {
+          message.innerHTML = " Name must be at least 3 characters";
+          message.style.color = "red";
+          return false;
+        }
+
+        // ===== 3. Email Validation =====
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          message.innerHTML = " Invalid email format";
+          message.style.color = "red";
+          return false;
+        }
+
+        // ===== 4. Age Validation =====
+        if (age < 18) {
+          message.innerHTML = " Age must be 18+";
+          message.style.color = "red";
+          return false;
+        }
+
+        // ===== Success =====
+        message.innerHTML = " Form Submitted Successfully!";
+        message.style.color = "green";
+
+        return true;
+      }
+    </script>
+  </body>
+</html>
