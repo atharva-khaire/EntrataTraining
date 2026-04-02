@@ -1,0 +1,20 @@
+provider "aws" {
+  region = "ap-south-1"
+}
+
+resource "aws_vpc" "main_vpc" {
+  cidr_block = "10.0.0.0/16"
+
+  tags = {
+    Name = "Main-VPC"
+  }
+}
+
+resource "aws_subnet" "subnet" {
+  vpc_id     = aws_vpc.main_vpc.id
+  cidr_block = "10.0.1.0/24"
+
+  tags = {
+    Name = "Subnet"
+  }
+}
