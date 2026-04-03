@@ -1,0 +1,1 @@
+{"version":2,"defects":[],"times":{"DiscountServiceTest::testDiscount with data set #0":0.005,"DiscountServiceTest::testDiscount with data set #1":0.002,"DiscountServiceTest::testDiscount with data set #2":0.001,"DiscountServiceTest::testInvalidPrice":0.002,"OrderServiceTest::testPlaceOrder":0.027}}
